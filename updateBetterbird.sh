@@ -17,6 +17,18 @@ desktopFile=~/.local/share/applications/betterbird.desktop
 mkdir -p $tmpPath
 cd  $tmpPath||exit 1
 
+
+checkIfBetterbirdIsRunning(){
+	if [ `ps aux|grep -v grep|grep betterbird-bin|wc -l` -gt 0 ]
+	then 
+		echo Betterbird is running.;
+		echo Please close it first;
+		exit 1
+	fi
+}
+
+
+
 downloadUpdate(){
 	rm $tmpFile
 	wget -O $tmpFile "https://www.betterbird.eu/downloads/get.php?os=linux&lang=$lang&version=$version"
@@ -79,6 +91,7 @@ EOF
 }
 
 
+checkIfBetterbirdIsRunning
 
 downloadUpdate
 getSha256
