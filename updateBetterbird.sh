@@ -62,12 +62,13 @@ extract(){
 
 createDesktopFile(){
 cat << EOF > $desktopFile
-	[Desktop Entry]
-	Encoding=UTF-8
-	Version=1.0
-	Type=Application
-	Terminal=false
-	Name=Betterbird
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Name=Betterbird
+Categories=Office
 EOF
 	echo Exec=$dstRootPath/betterbird/betterbird >> $desktopFile
 	echo Icon=$dstRootPath/betterbird//chrome/icons/default/default256.png >> $desktopFile
