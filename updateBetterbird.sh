@@ -11,14 +11,15 @@ tmpPath=~/tmp/betterbird
 tmpFile=$tmpPath/download
 
 dstRootPath=~/
-desktopFile=$dstRootPath/betterbird.desktop
+#desktopFile=$dstRootPath/betterbird.desktop
+desktopFile=~/.local/share/applications/betterbird.desktop
 
 mkdir -p $tmpPath
 cd  $tmpPath||exit 1
 
 downloadUpdate(){
 	rm $tmpFile
-	wget -O $tmpFile "https://www.betterbird.eu/downloads/get.php?os=linux&lang=$lang&version=$version"|grep Location:
+	wget -O $tmpFile "https://www.betterbird.eu/downloads/get.php?os=linux&lang=$lang&version=$version"
 #	Location: https://www.betterbird.eu/downloads/LinuxArchive/betterbird-102.5.0-bb24.de.linux-x86_64.tar.bz2 [following]
 
 }
@@ -71,7 +72,9 @@ EOF
 	echo Exec=$dstRootPath/betterbird/betterbird >> $desktopFile
 	echo Icon=$dstRootPath/betterbird//chrome/icons/default/default256.png >> $desktopFile
 
-#	sudo mv ~/.local/share/applications/<application-name.desktop> /usr/share/applications/
+#	sudo mv ~/.local/share/applications/<application-name.desktop> 
+#	/usr/share/applications/
+#  	/usr/share/app-install/desktop/
 }
 
 
