@@ -1,5 +1,5 @@
 # betterbird-dirty-update
-Quick and Dirty Install/Update Betterbird on linux
+Quick and Dirty Install/Update Betterbird on linux (Debian based like Debian, Ubuntu, Mint)
 
 I have only tried it with v. 102 and i cannot garantee for proper functionality.
 
